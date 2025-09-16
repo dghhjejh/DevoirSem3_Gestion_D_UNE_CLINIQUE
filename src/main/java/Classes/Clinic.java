@@ -1,5 +1,6 @@
 package Classes;
 
+import Enums.TriageType;
 import Enums.VisibleSymptom;
 
 import java.util.ArrayDeque;
@@ -10,10 +11,14 @@ public class Clinic {
 
     private ArrayDeque<String> doctorWaitingList;
     private ArrayDeque<String> radioWaitingList;
+    private TriageType triageTypeDoctor;
+    private TriageType triageTypeRadio;
 
-    public Clinic() {
+    public Clinic(TriageType triageTypeDoctor, TriageType triageTypeRadio) {
         this.doctorWaitingList = new ArrayDeque<>();
         this.radioWaitingList = new ArrayDeque<>();
+        this.triageTypeDoctor = triageTypeDoctor;
+        this.triageTypeRadio = triageTypeRadio;
     }
 
     public void triagePatient(String name, int gravity, VisibleSymptom visibleSymptom) {
